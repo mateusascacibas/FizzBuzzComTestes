@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div style="text-align: center;">
+        <h1 style="color: wheat;" class="bg-dark">FizzBuzz</h1>
+        <form class="row g-2">
+
+            <div class="col-auto">
+                <label for="limite" class="form-label">Digite a quantidade limite para geração: </label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" id="limite" maxlength="4" size="4" (keyup)="setLimite($event)"
+                    value="15" numero>
+            </div>
+
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3" (click)="gerar($event)" id ="btnGerar">Gerar</button>
+            </div>
+        </form>
+    </div>
+    <h2 *ngIf="resultado.length > 0" class="resultado">{{limite | retorno }}</h2>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let res of resultado">
+            {{res}}
+        </li>
+    </ul>
+</div>
