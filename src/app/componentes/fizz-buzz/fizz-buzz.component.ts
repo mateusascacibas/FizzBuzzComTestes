@@ -1,18 +1,37 @@
 import { FizzBuzzService } from './../../servicos/fizz-buzz.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { DataHoraService } from 'src/app/servicos/data-hora.service';
 
 @Component({
   selector: 'app-fizz-buzz',
   templateUrl: './fizz-buzz.component.html',
   styleUrls: ['./fizz-buzz.component.css']
 })
-export class FizzBuzzComponent implements OnInit {
+export class FizzBuzzComponent implements OnInit, OnDestroy {
   limite: number = 15;
   resultado: string[] = [];
 
-  constructor(private fizzBuzzService: FizzBuzzService) { }
+  dataTempoReal = '';
+  dataTempoRealSub: Subscription | undefined;
+
+
+  constructor(private fizzBuzzService: FizzBuzzService, private dataHoraService: DataHoraService) { }
+
+  ngOnDestroy(): void{
+    this.dataTempoRealSub?.unsubscribe();
+  }
 
   ngOnInit(): void {
+
+    this.dataTempoRealSub = this.dataHoraService.dataHoraTempoReal.subscribe(
+      dataHora => this.dataTempoReal = dataHora
+    );
+
+  }
+
+  atualizarDataHora(){
+    this.dataHoraService.atualizarDatahora();
   }
 
   setLimite($event: any){
@@ -26,4 +45,7 @@ export class FizzBuzzComponent implements OnInit {
     $event.preventDefault();
     this.resultado = this.fizzBuzzService.gerar(this.limite);
   }
+
+
+
 }

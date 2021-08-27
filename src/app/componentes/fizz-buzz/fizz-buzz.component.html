@@ -1,10 +1,11 @@
 <div class="container-fluid">
     <div style="text-align: center;">
         <h1 style="color: wheat;" class="bg-dark">FizzBuzz</h1>
+        <p class="h6">Data em tempo real: {{dataTempoReal}}</p>
         <form class="row g-2">
 
             <div class="col-auto">
-                <label for="limite" class="form-label">Digite a quantidade limite para geração: </label>
+                <label for="limite" class="form-label"><strong>Digite a quantidade limite para geração: </strong></label>
             </div>
             <div class="col-auto">
                 <input type="text" class="form-control" id="limite" maxlength="4" size="4" (keyup)="setLimite($event)"
