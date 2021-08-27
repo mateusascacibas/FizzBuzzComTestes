@@ -85,4 +85,4 @@ minikube service --url fizzbuzzcomtestesservico
 ```
 
 Obrigado se leu até aqui!
-Projeto desenvolvido por: Daniel Cardoso da Silva, Matheus Ascacibas e Telma Carvalho.
+Projeto desenvolvido por: Daniel Cardoso da Silva, Mateus Ascacibas e Telma Carvalho.
