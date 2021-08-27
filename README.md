@@ -1,27 +1,88 @@
-# Fizzbuzz
+# FizzBuzz
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+## Informações sobre o projeto
 
-## Development server
+A aplicação FizzBuzz tem como propósito verificar se a quantidade de elementos digitadas pelo usuário é múltiplo de x, y e z (sendo esses definidos pelo usuário). Caso seja, irá substituir os números multiplos pelas palavras, respectivamente: "Fizz", "Buzz" e "FizzBuzz".
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Recursos extras
 
-## Code scaffolding
+- Sistema de data e hora atuais (em PT-BR)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Tecnologias Usadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+O projeto FizzBuzz foi feito com as seguintes tecnologias:
 
-## Running unit tests
+- [Angular](https://angular.io/)
+- [Bootstrap](https://getbootstrap.com/)
+- 
+## Ferramentas Utilizadas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O projeto FizzBuzz foi desenvolvido na seguinte Ferramenta:
 
-## Running end-to-end tests
+- [VS Code](https://code.visualstudio.com/)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Guia de instalação 
 
-## Further help
+Para poder executar o projeto em sua máquina, primeiro é necessário clonar o projeto do GitHub. Em um terminal de sua preferência, execute os seguintes comandos:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+git clone https://github.com/mateusascacibas/FizzBuzzComTestes
+cd FizzBuzzComTestes
+npm install
+ng serve
+```
+Após isso, a aplicação poderá ser acessada pelo navegador na porta:
+
+```https://localhost:4200```
+
+## Para executar no Docker
+
+Para executar o projeto no Docker, abra um terminal de preferência e execute os seguintes comandos: 
+
+
+
+
+Baixar a imagem
+```
+docker pull dannxp/fizzbuzzcomtestes
+```
+
+Executar a imagem:
+
+```
+docker run -d -p 8080:80 dannxp/fizzbuzzcomtestes
+```
+
+No navegador:
+
+```sh
+https://localhost:8080
+```
+
+#### Kubernetes (Opcional)
+
+Para executar no Kubernetes, realize os seguintes passos:
+
+```sh
+minikube start --driver=docker
+```
+
+Gerar deploy no Kubernetes:
+
+```sh
+kubectl apply -f arquivo.yaml
+```
+
+Gerar serviço no Kubernetes
+```sh
+kubectl apply -f servico.yaml
+```
+Executar o serviço
+
+```sh
+minikube service --url fizzbuzzcomtestesservico
+```
+
+Obrigado se leu até aqui!
+Projeto desenvolvido por: Daniel Cardoso da Silva, Matheus Ascacibas e Telma Carvalho.
