@@ -24,6 +24,7 @@ describe('FizzBuzzService', () => {
     const fizzBuzz: string[] = service.gerar(10);
     expect(fizzBuzz[2]).toBe('Fizz');
     expect(fizzBuzz[5]).toBe('Fizz');
+    expect(fizzBuzz[8]).toBe('Fizz');
   });
 
   it('deve retornar Buzz para multiplos de 5.', () =>{
@@ -33,9 +34,10 @@ describe('FizzBuzzService', () => {
   });
 
   it('deve retornar FizzBuzz para multiplos de 15.', () =>{
-    const fizzBuzz: string[] = service.gerar(30);
+    const fizzBuzz: string[] = service.gerar(45);
     expect(fizzBuzz[14]).toBe('FizzBuzz');
     expect(fizzBuzz[29]).toBe('FizzBuzz');
+    expect(fizzBuzz[44]).toBe('FizzBuzz');
   });
 
   it("deve retornar o número correto de elementos na lista", () => {
