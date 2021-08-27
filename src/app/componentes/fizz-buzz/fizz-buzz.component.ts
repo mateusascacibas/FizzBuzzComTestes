@@ -9,7 +9,10 @@ import { DataHoraService } from 'src/app/servicos/data-hora.service';
   styleUrls: ['./fizz-buzz.component.css']
 })
 export class FizzBuzzComponent implements OnInit, OnDestroy {
-  limite: number = 15;
+  limite: number = 30;
+  fizz: number = 3;
+  buzz: number = 5;
+  fizzbuzz: number = 15;
   resultado: string[] = [];
 
   dataTempoReal = '';
@@ -40,10 +43,31 @@ export class FizzBuzzComponent implements OnInit, OnDestroy {
       this.resultado =[];
     }
   }
+  
+  setFizz($event: any){
+    this.fizz = $event.target.value;
+    if($event.keyCode !== 13){
+      this.resultado =[];
+    }
+  }
 
+  
+  setBuzz($event: any){
+    this.buzz = $event.target.value;
+    if($event.keyCode !== 13){
+      this.resultado =[];
+    }
+  }
+  
+  setFizzBuzz($event: any){
+    this.fizzbuzz = $event.target.value;
+    if($event.keyCode !== 13){
+      this.resultado =[];
+    }
+  }
   gerar($event: any){
     $event.preventDefault();
-    this.resultado = this.fizzBuzzService.gerar(this.limite);
+    this.resultado = this.fizzBuzzService.gerar(this.limite, this.fizz, this.buzz, this.fizzbuzz);
   }
 
 
