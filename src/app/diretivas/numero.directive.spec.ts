@@ -11,4 +11,10 @@ describe('NumeroDirective', () => {
     directive.onKeyup($event);
     expect($event.target.value).toBe('123');
   });
+
+  it('deve remover caracteres que não sejam numeros. Nesse caso (.) e (,)', () =>{
+    let $event = { target: { value: '5.7.6.4,3,2'}};
+    directive.onKeyup($event);
+    expect($event.target.value).toBe('576432');
+  });
 });
